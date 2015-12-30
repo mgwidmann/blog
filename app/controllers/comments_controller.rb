@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  
+
 
   def index
     post = Post.find(params[:post_id])
@@ -22,8 +22,8 @@ class CommentsController < ApplicationController
   end
 
   def new
-    post = Post.find(params[:post_id])
-    @comment = post.comments.build
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.build
 
     respond_to do |format|
       format.html
